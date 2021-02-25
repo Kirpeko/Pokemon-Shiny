@@ -1,4 +1,4 @@
-function main(){
+function main(){ // THis is a test change
 
     // Setting up reading the html counter and the actual counter number
 
