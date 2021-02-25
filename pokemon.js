@@ -10,8 +10,9 @@ function main(){
 
     counter_num = parseInt(localStorage.getItem("counter_num")); // Take counter number from saved local storage
 
-    if((counter_num == NaN) || (counter_num == null)){       // if there is nothing in local storage sets counter to 0
+    if((counter_num === NaN) || (counter_num === null)){       // if there is nothing in local storage sets counter to 0
         counter_num = 0;
+        localStorage.setItem("counter_num", counter_num);
     }
 
     counter.innerHTML = counter_num;
