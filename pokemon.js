@@ -1,29 +1,30 @@
 function main(){
 
-    // Setting up reading the html counter and the actual counter number
+    /* Setting up reading the html counter and the actual counter number */
 
     let counter = document.querySelector("#counter");
     let counter_num;
 
 
-    // Local Storage stuff I barely understand
+    /* Local Storage stuff I barely understand */
 
-    counter_num = parseInt(localStorage.getItem("counter_num")); // Take counter number from saved local storage
-
-    if((counter_num === NaN) || (counter_num === null)){       // if there is nothing in local storage sets counter to 0
+    if(localStorage.getItem("counter_num") === null){       // If there is nothing in local storage sets counter to 0
         counter_num = 0;
         localStorage.setItem("counter_num", counter_num);
+    }else{
+        counter_num = parseInt(localStorage.getItem("counter_num"));   // Otherwise set counter_num to what's in local storage
     }
 
     counter.innerHTML = counter_num;
 
 
-    // Setting up maths for later use in cureent hunting stats
+    /* Setting up maths for later use in cureent hunting stats */
 
     let to_90 = 18858 - counter_num;
 
 
-    // Function for changing the numbers upon clicking the counter
+    /* Function for changing the numbers upon clicking the counter */
+
     function btnPlusOnClick(e){
         counter_num = counter_num + 1;
         binomialDistribution();
@@ -35,7 +36,7 @@ function main(){
     btn_plus.addEventListener("click", btnPlusOnClick);
 
 
-    // Function for minus button changing the number
+    /* Function for minus button changing the number */
 
     function btnMinusOnClick(){
         counter_num = counter_num - 1;
@@ -51,7 +52,7 @@ function main(){
     btn_minus.addEventListener("click", btnMinusOnClick);
 
 
-    // Function for calculation binomial distribution
+    /* Function for calculation binomial distribution */
 
     function binomialDistribution(){
         var temporary_num = (1-(1/8192));
