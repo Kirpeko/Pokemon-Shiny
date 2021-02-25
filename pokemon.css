@@ -1,0 +1,163 @@
+body{
+  background-image: radial-gradient(circle, white,#16223b);
+}                                    
+
+/* Set top bar for Logo + Site*/
+#top_bar{
+  background-color:
+  #1110f7;
+  /* background-image:radial-gradient(closest-side at 25% 60%,white,rgb(247, 247, 34)); */
+  height: 18vh;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100vw;
+}
+
+#logo{
+ grid-row-start: auto;
+ height: 10vh;
+ filter: drop-shadow(10px 10px 15px rgb(54, 0, 54));
+ padding: 20px;
+ 
+}
+
+#site_name{
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+
+  margin-left: 5px;
+  text-align: center;
+  font-size: 45px;
+  color:
+ #ffcb01;
+  text-shadow: 4.5px 3px 
+  #58585a;
+  filter: drop-shadow(10px 10px 40px rgb(54, 0, 54));
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: underline dotted #ef4035;
+
+}
+
+@-webkit-keyframes glow{
+  from{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(247, 247, 107), 0 0 40px rgb(247, 247, 107), 0 0 50px rgb(247, 247, 107), 0 0 60px rgb(247, 247, 107), 0 0 70px rgb(247, 247, 107) 
+  }
+  to{
+    text-shadow: 0 0 20px #fff, 0 0 30px lightyellow, 0 0 40px lightyellow, 0 0 50px lightyellow, 0 0 60px lightyellow, 0 0 70px lightyellow, 0 0 80px lightyellow;
+  }
+}
+
+#main_form{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 70vw;
+  height: 80vh;
+  border: solid 2px black;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-areas: 
+  "a1 a2 a3"
+  "a4 a5 a6"
+  "a7 a8 a9";
+}
+
+#btn_plus{
+  grid-area: a6;
+  justify-self: end;
+  background-color: limegreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 150%;
+  font-size: 20px;
+}
+
+#btn_minus{
+  grid-area: a4;
+  background-color: #ef4035;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 150%;
+  font-size: 20px;
+}
+
+#btn_complete{
+  grid-area: a2;
+  align-self: start;
+  justify-self: center;
+  background-color: aquamarine;
+  height: 10%;
+  width: 300%;
+  transform: translateY(10px);
+  font-size: 18px;
+  font-family: "Lucida Console", Helvetica, Sans-serif;
+  
+}
+
+#counter{
+  grid-area: a2;
+  padding: 8px;
+  font-size: 45px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.container{
+  max-height: 128px;
+  max-width: 128px;
+  min-height: 64px;
+  min-width: 64px;
+  grid-area: a1;
+  align-self: center;
+  justify-self: end
+
+}
+
+#charmander{
+  height: 200%;
+  width: 200%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: 
+  rgb(44, 43, 43);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100vw;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color:whitesmoke;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Lucida Console", Helvetica, Sans-serif;
+  filter: drop-shadow(10px 10px 10px black);
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: lightskyblue;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgba(255, 255, 255, 0.151);
+  color: white;
+}
