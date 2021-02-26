@@ -100,6 +100,33 @@ body{
   
 }
 
+#shiny_chance_text{
+  grid-area: a4;
+  background-color: white;
+  color: black;
+  justify-self: center;
+  align-self: center;
+  height: 50%;
+  width: 100%;
+  padding: 5px;
+  border:solid 2px black;
+  transform: translateY(-10%);
+}
+
+#shiny_chance{
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: white;
+  color: black;
+  justify-self: start;
+  align-self: center;
+  height: 50%;
+  width: 200%;
+  padding: 5px;
+  border:solid 2px black;
+  border-left: none;
+  transform: translateY(-10%);
+}
+
 #counter{
   grid-area: a2;
   padding: 8px;

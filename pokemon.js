@@ -4,6 +4,7 @@ function main(){
 
     let counter = document.querySelector("#counter");
     let counter_num;
+    let complete_button = document.querySelector("#btn_complete");
 
 
     /* Local Storage stuff I barely understand */
@@ -12,7 +13,7 @@ function main(){
         counter_num = 0;
         localStorage.setItem("counter_num", counter_num);
     }else{
-        counter_num = parseInt(localStorage.getItem("counter_num"));   // Otherwise set counter_num to what's in local storage
+        counter_num = parseInt(localStorage.getItem("counter_num"));   // Otherwise set counter to what's in local storage
     }
 
     counter.innerHTML = counter_num;
@@ -22,13 +23,22 @@ function main(){
 
     let to_90 = 18858 - counter_num;
 
+    let random
 
     /* Function for changing the numbers upon clicking the counter */
 
     function btnPlusOnClick(e){
         counter_num = counter_num + 1;
         binomialDistribution();
-        counter.innerHTML = counter_num;
+        random = Math.floor(Math.random() * 201)
+        if(random == 0){
+            counter.innerHTML = counter_num
+            random_message = Math.floor(Math.random() * encouraging_message.length)
+            complete_button.innerHTML = encouraging_message[random_message]
+        }else{
+            counter.innerHTML = counter_num;
+            complete_button.innerHTML = "Complete"
+        }
         localStorage.setItem("counter_num", counter_num);
     }
 
@@ -62,5 +72,12 @@ function main(){
         // to be completed
     }
 }
+
+let encouraging_message = [
+    "Keep Going You Can Do It!",
+    "Don't Give Up Yet!",
+    "Please God Keep This Site In Fullscreen It Doesn't Scale Yet",
+]
+
 
 window.addEventListener("load", main)
