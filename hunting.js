@@ -7,11 +7,11 @@ function main(){
 
     /*Test Function to change colour*/
 
-    function testFunction(e){
-        alert("hello");
+    function onAddButtonClick(e){
+        alert("test");
     }
 
-    add_pokemon_button.addEventListener("click", testFunction);
+    add_pokemon_button.addEventListener("click", onAddButtonClick);
 }
 
 window.addEventListener("load", main);
