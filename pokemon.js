@@ -74,9 +74,10 @@ function main(){
 }
 
 let encouraging_message = [
-    "Keep Going You Can Do It!",
+    "Keep Going You're Almost There!",
+    "You Can Do It!",
     "Don't Give Up Yet!",
-    "Please God Keep This Site In Fullscreen It Doesn't Scale Yet",
+    "Please God Keep This Site In Fullscreen It Doesn't Scale",
 ]
 
 
