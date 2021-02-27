@@ -25,13 +25,33 @@
     <a href="statistics.html">Stats</a>
   </div>
   
-  <form id="main_form">
-    <div class="container">
-      <a href="http://pokemondb.net/pokedex/charmander"><img id="charmander" src="https://img.pokemondb.net/sprites/firered-leafgreen/shiny/charmander.png" alt="Charmander"></a>
+  <div id="main-container">
+
+    <div id="logo-area">
+
+      <div id="logo-left">
+        <a href="http://pokemondb.net/pokedex/charmander"><img id="charmander" src="https://img.pokemondb.net/sprites/firered-leafgreen/shiny/charmander.png" alt="Charmander"></a>
     </div>
-    <button type="button" id="btn_minus"> - </button>
-    <div id="counter"></div>
-    <button type="button" id="btn_plus"> + </button>
+
+    <div id="logo-right">
+      <div id="counter"></div>
+    </div>
+  </div>
+  
+    <div id="control-area">
+      <button class="buttons" type="button" id="btn_minus"> - </button>
+      <button class="buttons" type="button" id="btn_plus"> + </button>
+    </div>
+
+  <div id="complete">
     <button type="button" id="btn_complete">Complete</button>
-    <button type="button" id="shiny_chance_text" disabled>Shiny Chance</button>
-    <button type="button" id="shiny_chance" disabled>1/8192</button>
+    </div>
+
+  <div id="datatable">
+    <div id=tb1 class="databuttons">Date Started</div>
+    <div id=tb2 class="databuttons">??</div>
+    <div id=tb3 class="databuttons">Shiny Odds</div>
+    <div id=tb4 class="databuttons">1/8192</div>
+    <div id=tb5 class="databuttons">Fun Numbers</div>
+    <div id=tb6 class="databuttons">%</div>
+  </div>
