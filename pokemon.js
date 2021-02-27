@@ -71,13 +71,28 @@ function main(){
         return binomial_distribution
         // to be completed
     }
+
+    /* Get current date */
+    
+    let date_area = document.getElementById("tb2");
+
+    let today = new Date();
+
+    let dd = today.getDate();
+    let mm = today.getMonth()+1;
+    let yyyy = today.getFullYear();
+
+    today = mm+'/'+dd+'/'+yyyy;
+
+    date_area.innerHTML = today;
 }
 
+
+
 let encouraging_message = [
-    "Keep Going You're Almost There!",
-    "You Can Do It!",
+    "Keep Going You Can Do It!",
     "Don't Give Up Yet!",
-    "Please God Keep This Site In Fullscreen It Doesn't Scale",
+    "Please God Keep This Site In Fullscreen It Doesn't Scale Yet",
 ]
 
 
