@@ -64,14 +64,17 @@ function main(){
 
     /* Function for calculation binomial distribution */
 
+    let bnd_table = document.querySelector("#tb6");
+
     function binomialDistribution(){
-        var temporary_num = (1-(1/8192));
-        var exponential_num = Math.pow(temporary_num, counter_num);
-        var binomial_distribution = 1 - exponential_num
-        return binomial_distribution
-        // to be completed
+        let temporary_num = (1-(1/8192));
+        let exponential_num = Math.pow(temporary_num, counter_num);
+        let binomial_distribution_decimal = 1 - exponential_num
+        let binomial_distribution_percent = binomial_distribution_decimal * 100
+        bnd_table.innerHTML = binomial_distribution_percent.toFixed(2) + "%"
     }
 
+    binomialDistribution();
     /* Get current date */
     
     let date_area = document.getElementById("tb2");

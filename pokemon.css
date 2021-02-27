@@ -270,3 +270,28 @@ body{
   grid-row: 3 / 4;
   grid-column: 2 / 3;
 }
+
+/* Styling For New Hunting List Page */
+
+#hunting_list{
+  display: grid;
+  grid-template-rows: 1fr/*Plus Button*/ 1fr/*extra space*/ 2fr;
+  padding-top: 20px;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#add_pokemon{
+  display: grid;
+  padding: 10px;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: "Lucida Console", Helvetica, Sans-serif;
+  border-radius: 50%;
+  height: 125%;
+  width: 10%;
+}
