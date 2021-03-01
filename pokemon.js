@@ -19,7 +19,7 @@ function main(){
     counter.innerHTML = counter_num;
 
 
-    /* Setting up maths for later use in cureent hunting stats */
+    /* Setting up maths for later use in current hunting stats */
 
     let to_90 = 18858 - counter_num;
 
