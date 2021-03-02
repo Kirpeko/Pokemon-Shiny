@@ -21,7 +21,7 @@ function main(){
 
     /* Setting up maths for later use in current hunting stats */
 
-    let to_90 = 18858 - counter_num;
+    //let to_90 = 18858 - counter_num;
 
     let random
 
@@ -85,7 +85,13 @@ function main(){
     let mm = today.getMonth()+1;
     let yyyy = today.getFullYear();
 
-    today = mm+'/'+dd+'/'+yyyy;
+
+    if(localStorage.getItem("date") === null){       // If there is nothing in local storage sets date to today
+        today = mm+'/'+dd+'/'+yyyy;
+        localStorage.setItem("date", today);
+    }else{
+        today = (localStorage.getItem("date"));   // Otherwise set date to what's in local storage
+    }
 
     date_area.innerHTML = today;
 }

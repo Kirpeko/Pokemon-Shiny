@@ -4,16 +4,87 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Completed · Pokemon Shiny Counter</title>
+  <title>Pokemon Shiny Counter</title>
+
   <link rel="stylesheet" href="pokemon.css">
+  <style>
+
+    /*  Not Stolen from w3school at all...   */
+    
+      /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      right: 50%;
+      transform: translateX(50%) translateY(50%);
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+        /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+
+      /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+
+    /* Styling for dropdown Menu */
+    #pokemon_dropdown{
+      width: 100%;
+      padding: 10px;
+    }
+
+  </style>
+
   <script type="text/javascript" src="hunting.js"></script>
+  <script>
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
   
 </head>
 
-
-
 <body>
   
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+      <h1>Select Pokemon</h1>
+  
+      <select name="testname" id="pokemon_dropdown">
+        <option value="bulbasaur">Bulbasaur</option>
+        <option value="charmander">Charmander</option>
+        <option value="Squirtle">Squirtle</option>
+        <option value="Pikachu">Pikachu</option>
+      </select>
+
+      <button type="button" class="btn" onclick="closeForm()" id="confirm_button">Confirm</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+
   <header id="top_bar">
     <img id="logo" src="images/pokeball.png">
     <p id="site_name"> Shiny Tracker </p>
@@ -24,7 +95,11 @@
     <a href="completed.html">Completed</a>
     <a href="statistics.html">Stats</a>
   </div>
-  
-  <div id="hunting_list">
-    <button type="button" id="add_pokemon">+</button>
+  <div id="add_button_div">
+    <button type="button" id="add_pokemon">+</button> 
   </div>
+  <div id="hunting_list">
+     
+  </div>
+
+  

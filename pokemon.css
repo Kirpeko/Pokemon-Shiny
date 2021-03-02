@@ -97,7 +97,7 @@ body{
   height: 50%;
   width: 100%;
   padding: 5px;
-  border:solid 2px black;
+  border:solid 2px #1110f7;
   transform: translateY(-10%);
 }
 
@@ -167,6 +167,7 @@ body{
   margin: auto;
   justify-items: center;
   min-width: 600px;
+  padding-top: 2px;
 }
 
 #charmander {
@@ -174,11 +175,14 @@ body{
 }
 
 #logo-area {
+  padding: 5px;
+  margin-top: 2em;
   grid-row: 1 / 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 140px;
-  border: 1px solid black;
+  border: 3px solid #58585a;
+  border-radius: 30px;
 }
 
 #logo-left {
@@ -194,31 +198,42 @@ body{
 
 #control-area {
   grid-row: 2 / 3;
+  align-self:center;
 }
 
 .buttons {
   margin: 10px;
   padding: 8px;
   min-width: 14em;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #btn_minus {
-  background-color: #ef4035;
+  background-image: radial-gradient(circle, white,#ef4035);
 }
 
 #btn_plus {
-  background-color: limegreen;
+  background-image: radial-gradient(circle, white,limegreen);
 }
 
 #btn_complete{
+  margin-top: 1em;
   grid-row: 2 / 3;
-  display: grid;
-  padding: 10px;
+  align-self:center;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top:0.5em;
+  padding-bottom: 0.5em;
   align-self: center;
   justify-self: center;
-  background-color: aquamarine;
-  font-size: 18px;
+  background-image: radial-gradient(circle, white,#1110f7);
+  font-size: 20px;
+  font-weight:normal;
   font-family: "Lucida Console", Helvetica, Sans-serif;
+  border-radius: 20px;
+  color: black
 }
 
 
@@ -232,12 +247,12 @@ body{
 .databuttons {
   min-width: 220px;
   background-color: #fff;
-  border: 1px solid black;
+  border: 2px solid black;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   align-self: center;
-  padding: 35px;
+  padding: 3em;
 }
 
 #tb1 {
@@ -273,18 +288,17 @@ body{
 
 /* Styling For New Hunting List Page */
 
-#hunting_list{
+#add_button_div{
   display: grid;
-  grid-template-rows: 1fr/*Plus Button*/ 1fr/*extra space*/ 2fr;
+  grid-template-rows: 1fr/*Plus Button*/ 1fr/*extra space*/;
   padding-top: 20px;
   padding-left: 25%;
-  padding-right: 25%;
+  padding-right: 25%; 
 }
 
 #add_pokemon{
   display: grid;
   padding: 10px;
-  align-self: center;
   justify-self: center;
   justify-items: center;
   align-items: center;
@@ -294,4 +308,31 @@ body{
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+
+#hunting_list{
+  display:flex;
+  flex-direction: column;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+/* Styling for Stats page */
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  text-align: center;
+  padding: 5em;
+ 
+}
+
+.databox {
+  padding: 4em;
+  background-color: #fff;
+  border: 3px solid #1110f7;
+  font-size: 20px;
+  font-weight: bold;
 }
