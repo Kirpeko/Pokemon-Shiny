@@ -12,8 +12,6 @@ function main(){
                 "href" : "http://pokemondb.net/pokedex/bulbasaur",
                 "number_seen" : 0,
                 "number_caught" : 0
-
-
             },
             {
                 "name" : "Charmander",
@@ -21,7 +19,6 @@ function main(){
                 "href" : "http://pokemondb.net/pokedex/charmander",
                 "number_seen": 0,
                 "number_caught" : 0
-
             },
             {
                 "name" : "Squirtle",
