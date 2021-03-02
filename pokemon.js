@@ -1,20 +1,21 @@
 function main(){
 
     /* Setting up reading the html counter and the actual counter number */
+    
+    let index = localStorage.getItem('selectedIndex')
+    let pokemons = JSON.parse(localStorage.getItem('pokemon'));
+    let selected_mon = pokemons[index]
+
+    let pokemon_sprite = document.querySelector("#pokemon_sprite");
+    pokemon_sprite.src = selected_mon["sprite_image"];
+
+    let sprite_anchor = document.querySelector("#sprite_anchor");
+    sprite_anchor.href = selected_mon["href"];
 
     let counter = document.querySelector("#counter");
-    let counter_num;
-    let complete_button = document.querySelector("#btn_complete");
+    let counter_num = selected_mon["number_seen"];
 
-
-    /* Local Storage stuff I barely understand */
-
-    if(localStorage.getItem("counter_num") === null){       // If there is nothing in local storage sets counter to 0
-        counter_num = 0;
-        localStorage.setItem("counter_num", counter_num);
-    }else{
-        counter_num = parseInt(localStorage.getItem("counter_num"));   // Otherwise set counter to what's in local storage
-    }
+    let site_name = document.querySelector("#site_name");
 
     counter.innerHTML = counter_num;
 
@@ -34,10 +35,10 @@ function main(){
         if(random == 0){
             counter.innerHTML = counter_num
             random_message = Math.floor(Math.random() * encouraging_message.length)
-            complete_button.innerHTML = encouraging_message[random_message]
+            site_name.innerHTML = encouraging_message[random_message]
         }else{
             counter.innerHTML = counter_num;
-            complete_button.innerHTML = "Complete"
+            site_name.innerHTML = "Shiny Tracker"
         }
         localStorage.setItem("counter_num", counter_num);
     }
@@ -99,9 +100,11 @@ function main(){
 
 
 let encouraging_message = [
-    "Keep Going You Can Do It!",
+    "Keep Going!",
+    "You Can Do It!",
     "Don't Give Up Yet!",
-    "Please God Keep This Site In Fullscreen It Doesn't Scale Yet",
+    "Please God Keep This Site In Fullscreen It Doesn't Scale",
+    "Maybe One Day I Will Complete This",
 ]
 
 

@@ -1,6 +1,43 @@
 /* Javascript for the hunting list page */
 
-function main(){    
+function main(){  
+    
+    /* On Load for Local Storage */
+
+    localStorage.setItem('pokemon', JSON.stringify(
+        [
+            {
+                "name" : "Bulbasaur",
+                "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/bulbasaur.png",
+                "href" : "http://pokemondb.net/pokedex/bulbasaur",
+                "number_seen" : 0,
+                "number_caught" : 0
+
+
+            },
+            {
+                "name" : "Charmander",
+                "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/charmander.png",
+                "href" : "http://pokemondb.net/pokedex/charmander",
+                "number_seen": 0,
+                "number_caught" : 0
+
+            },
+            {
+                "name" : "Squirtle",
+                "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/squirtle.png",
+                "href" : "http://pokemondb.net/pokedex/squirtle",
+                "number_seen": 0,
+                "number_caught" : 0
+            },
+            {
+                "name" : "Pikachu",
+                "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/pikachu.png",
+                "href" : "http://pokemondb.net/pokedex/pikachu",
+                "number_seen": 0,
+                "number_caught" : 0
+            }
+        ]))
 
 
     /* Add Pokemon button */
@@ -17,20 +54,33 @@ function main(){
     /*Function to add pokemon to hunting list*/
 
     let new_button = document.createElement("button");
-    let pokemon_list = document.querySelector("#hunting_list");
+    let pokemon_button_list = document.querySelector("#hunting_list");
 
     
 
     function onConfirmButtonClick(){
         selected_mon = document.querySelector("#pokemon_dropdown").value;
         new_button.id = "testid";
-        pokemon_list.appendChild(new_button);
-        new_button.style.cssText = "display: flex;flex-direction: column;height: 100px;padding: 10px;justify-content: center;align-items: center;font-size: 25px;";
+        pokemon_button_list.appendChild(new_button);
+        new_button.style.cssText = "margin: 4px;display: flex;flex-direction: column;height: 1fr;padding: 10px;justify-content: center;align-items: center;font-size: 25px;";
         new_button.innerHTML = `${selected_mon}  ·  ${0}`;
             // Read Chosen pokemon name/set counter to 0
     }
 
     confirm_button.addEventListener("click", onConfirmButtonClick);
+
+    let pokemon_list = JSON.parse(localStorage.getItem('pokemon'));
+    for(let item_index = 0; (item_index < pokemon_list.length); item_index++){
+        let item = pokemon_list[item_index];
+        let button = document.createElement('button')
+        button.style.cssText = "margin: 4px;display: flex;flex-direction: column;height: 1fr;padding: 10px;justify-content: center;align-items: center;font-size: 25px;";
+        button.innerHTML = `${item['name']} · ${item['number_seen']}`;
+        pokemon_button_list.appendChild(button);
+        button.addEventListener('click', function(){
+            localStorage.setItem('selectedIndex', item_index);
+            window.location.replace('pokemon.html');
+        })
+    }
 
 }
 
