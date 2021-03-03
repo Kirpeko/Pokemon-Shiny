@@ -31,7 +31,7 @@ function main(){
     function btnPlusOnClick(e){
         counter_num = counter_num + 1;
         binomialDistribution();
-        random = Math.floor(Math.random() * 201)
+        random = Math.floor(Math.random() * 301)
         if(random == 0){
             counter.innerHTML = counter_num
             random_message = Math.floor(Math.random() * encouraging_message.length)
@@ -122,7 +122,10 @@ let encouraging_message = [
     "You Can Do It!",
     "Don't Give Up Yet!",
     "Please God Keep This Site In Fullscreen It Doesn't Scale",
-    "Maybe One Day I Will Complete This",
+    "Maybe One Day I Will Complete All This",
+    "Chosen One, Right Now I Feel More Like The Frozen One! - Ash Ketchum",
+    "Hi! I Like Shorts! They're Comfy And Easy To Wear!",
+    "Hey, I Know. I’ll Use My Trusty Frying Pan As A Drying Pan",
 ]
 
 
