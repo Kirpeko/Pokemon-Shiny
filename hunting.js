@@ -11,7 +11,6 @@ function main(){
                     "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/bulbasaur.png",
                     "href" : "http://pokemondb.net/pokedex/bulbasaur",
                     "number_seen" : 0,
-                    "number_caught" : 0,
                     "date" : ""
                 },
                 {
@@ -19,7 +18,6 @@ function main(){
                     "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/charmander.png",
                     "href" : "http://pokemondb.net/pokedex/charmander",
                     "number_seen": 0,
-                    "number_caught" : 0,
                     "date" : ""
                 },
                 {
@@ -27,7 +25,6 @@ function main(){
                     "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/squirtle.png",
                     "href" : "http://pokemondb.net/pokedex/squirtle",
                     "number_seen": 0,
-                    "number_caught" : 0,
                     "date" : ""
                 },
                 {
@@ -35,7 +32,6 @@ function main(){
                     "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/pikachu.png",
                     "href" : "http://pokemondb.net/pokedex/pikachu",
                     "number_seen": 0,
-                    "number_caught" : 0,
                     "date" : ""
                 }
             ]))
