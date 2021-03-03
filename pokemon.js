@@ -113,7 +113,7 @@ function main(){
         selected_mon["date"] = mm+'/'+dd+'/'+yyyy;
         date_area.innerHTML = selected_mon["date"];
     }else{
-        date_area = selected_mon["date"];
+        date_area.innerHTML = selected_mon["date"];
     };
 }
 
