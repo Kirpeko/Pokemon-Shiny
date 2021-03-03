@@ -40,7 +40,9 @@ function main(){
             counter.innerHTML = counter_num;
             site_name.innerHTML = "Shiny Tracker"
         }
-        localStorage.setItem("counter_num", counter_num);
+
+        pokemons[index]["number_seen"] = counter_num;
+        localStorage.setItem("pokemon", JSON.stringify(pokemons));
     }
 
     let btn_plus = document.querySelector("#btn_plus");
@@ -56,12 +58,34 @@ function main(){
         };
         binomialDistribution();
         counter.innerHTML = counter_num;
-        localStorage.setItem("counter_num", counter_num);
+        pokemons[index]["number_seen"] = counter_num;
+        localStorage.setItem("pokemon", JSON.stringify(pokemons));
     }
 
     let btn_minus = document.querySelector("#btn_minus");
     btn_minus.addEventListener("click", btnMinusOnClick);
 
+    /*  Function for Complete Button  */
+
+    let complete_pokemon_list = [];
+
+    function onCompleteButtonPress(){
+        if(localStorage.getItem("complete_pokemon") === null){
+            complete_pokemon_list.push(selected_mon);
+            localStorage.setItem("complete_pokemon", JSON.stringify(complete_pokemon_list));
+        }else{
+            let previous_complete = JSON.parse(localStorage.getItem("complete_pokemon"));
+            for(let index = 0; (index < previous_complete.length); index++){
+                let item = previous_complete[index];
+                complete_pokemon_list.push(item);
+            }
+            complete_pokemon_list.push(selected_mon);
+            localStorage.setItem("complete_pokemon", JSON.stringify(complete_pokemon_list));
+        };
+    }
+
+    let complete_button = document.querySelector("#btn_complete");
+    complete_button.addEventListener("click", onCompleteButtonPress);
 
     /* Function for calculation binomial distribution */
 
@@ -80,24 +104,18 @@ function main(){
     
     let date_area = document.getElementById("tb2");
 
-    let today = new Date();
+    if(selected_mon["date"] === ""){
+        let today = new Date();
 
-    let dd = today.getDate();
-    let mm = today.getMonth()+1;
-    let yyyy = today.getFullYear();
-
-
-    if(localStorage.getItem("date") === null){       // If there is nothing in local storage sets date to today
-        today = mm+'/'+dd+'/'+yyyy;
-        localStorage.setItem("date", today);
+        let dd = today.getDate();
+        let mm = today.getMonth()+1;
+        let yyyy = today.getFullYear();
+        selected_mon["date"] = mm+'/'+dd+'/'+yyyy;
+        date_area.innerHTML = selected_mon["date"];
     }else{
-        today = (localStorage.getItem("date"));   // Otherwise set date to what's in local storage
-    }
-
-    date_area.innerHTML = today;
+        date_area = selected_mon["date"];
+    };
 }
-
-
 
 let encouraging_message = [
     "Keep Going!",

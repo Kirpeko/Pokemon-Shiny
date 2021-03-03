@@ -317,6 +317,17 @@ body{
   padding-right: 25%;
 }
 
+.list_buttons{
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 1fr;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
 /* Styling for Stats page */
 
 #container {
@@ -330,9 +341,15 @@ body{
 }
 
 .databox {
-  padding: 4em;
+  display: flex;
+  padding: 2em;
   background-color: #fff;
   border: 3px solid #1110f7;
   font-size: 20px;
   font-weight: bold;
+  flex-direction: column;
+}
+
+.p_text{
+  font-size: 30px;
 }
