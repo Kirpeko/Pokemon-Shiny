@@ -24,8 +24,8 @@ body{
 
 #site_name{
   /*-webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 2s ease-in-out infinite alternate;*/
+  -moz-animation: glow 1s ease-in-out infinite alternate;*/
+  animation: glow 2s ease-in-out infinite alternate;
 
   margin-left: 5px;
   text-align: center;
@@ -40,14 +40,14 @@ body{
 
 }
 
-/*@-webkit-keyframes glow{
+@keyframes glow{
   from{
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(247, 247, 107), 0 0 40px rgb(247, 247, 107), 0 0 50px rgb(247, 247, 107), 0 0 60px rgb(247, 247, 107), 0 0 70px rgb(247, 247, 107) 
   }
   to{
     text-shadow: 0 0 20px #fff, 0 0 30px lightyellow, 0 0 40px lightyellow, 0 0 50px lightyellow, 0 0 60px lightyellow, 0 0 70px lightyellow, 0 0 80px lightyellow;
   }
-}*/
+}
 
 #shiny_chance_text{
   grid-area: a4;
