@@ -22,9 +22,10 @@ function main(){
 
     /* Setting up maths for later use in current hunting stats */
 
-    //let to_90 = 18858 - counter_num;
+    //let to_90 = 18858 - counter_num;    Possible Later Addition
 
     let random
+
 
     /* Function for changing the numbers upon clicking the counter */
 
@@ -65,6 +66,7 @@ function main(){
     let btn_minus = document.querySelector("#btn_minus");
     btn_minus.addEventListener("click", btnMinusOnClick);
 
+
     /*  Function for Complete Button  */
 
     let complete_pokemon_list = [];
@@ -82,10 +84,13 @@ function main(){
             complete_pokemon_list.push(selected_mon);
             localStorage.setItem("complete_pokemon", JSON.stringify(complete_pokemon_list));
         };
+        pokemons.splice(selected_mon, 1);
+        localStorage.setItem("pokemon", JSON.stringify(pokemons)); // Remove Selected Pokemon After Completion
     }
 
     let complete_button = document.querySelector("#btn_complete");
     complete_button.addEventListener("click", onCompleteButtonPress);
+
 
     /* Function for calculation binomial distribution */
 
@@ -117,7 +122,7 @@ function main(){
     };
 }
 
-let encouraging_message = [
+const encouraging_message = [
     "Keep Going!",
     "You Can Do It!",
     "Don't Give Up Yet!",
