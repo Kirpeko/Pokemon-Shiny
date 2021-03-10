@@ -7,64 +7,8 @@
   <title>Pokemon Shiny Counter</title>
 
   <link rel="stylesheet" href="pokemon.css">
-  <style>
-
-    /*  Not Stolen from w3school at all...   */
-    
-      /* The popup form - hidden by default */
-    .form-popup {
-      display: none;
-      position: fixed;
-      right: 50%;
-      transform: translateX(50%) translateY(50%);
-      border: 3px solid #f1f1f1;
-      z-index: 9;
-    }
-
-    /* Add styles to the form container */
-    .form-container {
-      max-width: 300px;
-      padding: 10px;
-      background-color: white;
-    }
-
-        /* Set a style for the submit/login button */
-    .form-container .btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 16px 20px;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      margin-bottom:10px;
-      opacity: 0.8;
-    }
-
-      /* Add a red background color to the cancel button */
-    .form-container .cancel {
-      background-color: red;
-    }
-
-    /* Add some hover effects to buttons */
-    .form-container .btn:hover, .open-button:hover {
-      opacity: 1;
-    }
-
-    /* Styling for dropdown Menu */
-    #pokemon_dropdown{
-      width: 100%;
-      padding: 10px;
-    }
-
-  </style>
-
   <script type="text/javascript" src="hunting.js"></script>
-  <script>
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
-    }
-  </script>
-  
+
 </head>
 
 <body>
@@ -80,8 +24,8 @@
         <option value="Pikachu">Pikachu</option>
       </select>
 
-      <button type="button" class="btn" onclick="closeForm()" id="confirm_button">Confirm</button>
-      <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+      <button type="button" class="btn" id="confirm_button">Confirm</button>
+      <button type="button" class="btn cancel" id="btn-cancel">Cancel</button>
     </form>
   </div>
 
@@ -101,5 +45,6 @@
   <div id="hunting_list">
      
   </div>
-
+</body>
+</html>
   

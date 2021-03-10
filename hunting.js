@@ -42,6 +42,7 @@ function main(){
     
     let confirm_button = document.querySelector("#confirm_button");
     let add_pokemon_button = document.querySelector("#add_pokemon");
+    let cancel_button = document.querySelector("#btn-cancel");
 
     function onAddButtonClick(){
         document.getElementById("myForm").style.display = "block";
@@ -54,7 +55,6 @@ function main(){
     let new_button = document.createElement("button");
     let pokemon_button_list = document.querySelector("#hunting_list");
 
-    
 
     function onConfirmButtonClick(){
         selected_mon = document.querySelector("#pokemon_dropdown").value;
@@ -63,9 +63,16 @@ function main(){
         new_button.className = "list_buttons"
         new_button.innerHTML = `${selected_mon}  ·  ${0}`;
             // Read Chosen pokemon name/set counter to 0
+        closeForm();
     }
 
     confirm_button.addEventListener("click", onConfirmButtonClick);
+
+    function onCancelButtonClick(){
+        closeForm();
+    }
+
+    cancel_button.addEventListener("click", onCancelButtonClick);
 
 
     let pokemon_list = JSON.parse(localStorage.getItem('pokemon'));
@@ -80,6 +87,10 @@ function main(){
             window.location.replace('pokemon.html');
         })
     }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
 
 }
 
