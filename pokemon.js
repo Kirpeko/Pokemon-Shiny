@@ -84,7 +84,7 @@ function main(){
             complete_pokemon_list.push(selected_mon);
             localStorage.setItem("complete_pokemon", JSON.stringify(complete_pokemon_list));
         };
-        pokemons.splice(selected_mon, 1);
+        pokemons.splice(index, 1);
         localStorage.setItem("hunting_pokemon", JSON.stringify(pokemons)); // Remove Selected Pokemon After Completion
         window.location.replace("completed.html");
     }
