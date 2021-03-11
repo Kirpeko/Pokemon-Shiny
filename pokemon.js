@@ -3,7 +3,7 @@ function main(){
     /* Setting up reading the html counter and the actual counter number */
     
     let index = localStorage.getItem('selectedIndex')
-    let pokemons = JSON.parse(localStorage.getItem('pokemon'));
+    let pokemons = JSON.parse(localStorage.getItem('hunting_pokemon'));
     let selected_mon = pokemons[index]
 
     let pokemon_sprite = document.querySelector("#pokemon_sprite");
@@ -43,7 +43,7 @@ function main(){
         }
 
         pokemons[index]["number_seen"] = counter_num;
-        localStorage.setItem("pokemon", JSON.stringify(pokemons));
+        localStorage.setItem("hunting_pokemon", JSON.stringify(pokemons));
     }
 
     let btn_plus = document.querySelector("#btn_plus");
@@ -60,7 +60,7 @@ function main(){
         binomialDistribution();
         counter.innerHTML = counter_num;
         pokemons[index]["number_seen"] = counter_num;
-        localStorage.setItem("pokemon", JSON.stringify(pokemons));
+        localStorage.setItem("hunting_pokemon", JSON.stringify(pokemons));
     }
 
     let btn_minus = document.querySelector("#btn_minus");
@@ -85,7 +85,8 @@ function main(){
             localStorage.setItem("complete_pokemon", JSON.stringify(complete_pokemon_list));
         };
         pokemons.splice(selected_mon, 1);
-        localStorage.setItem("pokemon", JSON.stringify(pokemons)); // Remove Selected Pokemon After Completion
+        localStorage.setItem("hunting_pokemon", JSON.stringify(pokemons)); // Remove Selected Pokemon After Completion
+        window.location.replace("completed.html");
     }
 
     let complete_button = document.querySelector("#btn_complete");

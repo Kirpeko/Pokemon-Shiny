@@ -38,6 +38,19 @@ function main(){
     }
 
 
+    let pokemon_list = JSON.parse(localStorage.getItem("pokemon"));
+
+    let copied_pokemon_list = JSON.parse(JSON.stringify(pokemon_list));
+    
+
+    if(localStorage.getItem("hunting_pokemon") !== null){
+        var hunting_list = JSON.parse(localStorage.getItem("hunting_pokemon"));
+    }else{
+        var hunting_list = []
+    };
+
+
+
     /* Add Pokemon button */
     
     let confirm_button = document.querySelector("#confirm_button");
@@ -50,19 +63,21 @@ function main(){
 
     add_pokemon_button.addEventListener("click", onAddButtonClick)
 
+
     /*Function to add pokemon to hunting list*/
 
-    let new_button = document.createElement("button");
-    let pokemon_button_list = document.querySelector("#hunting_list");
-
-
     function onConfirmButtonClick(){
-        selected_mon = document.querySelector("#pokemon_dropdown").value;
-        new_button.id = "testid";
-        pokemon_button_list.appendChild(new_button);
-        new_button.className = "list_buttons"
-        new_button.innerHTML = `${selected_mon}  ·  ${0}`;
-            // Read Chosen pokemon name/set counter to 0
+        let new_mon = document.querySelector("#pokemon_dropdown").value;
+        for(let i in pokemon_list){
+            if(pokemon_list[i].name === new_mon){
+                let new_mon_object = copied_pokemon_list[i];
+                new_mon_object["number_seen"] = 0;
+                new_mon_object["date"] = "";
+                hunting_list.push(new_mon_object);
+                localStorage.setItem("hunting_pokemon", JSON.stringify(hunting_list));
+            }
+        }
+        location.reload();
         closeForm();
     }
 
@@ -75,18 +90,24 @@ function main(){
     cancel_button.addEventListener("click", onCancelButtonClick);
 
 
-    let pokemon_list = JSON.parse(localStorage.getItem('pokemon'));
-    for(let item_index = 0; (item_index < pokemon_list.length); item_index++){
-        let item = pokemon_list[item_index];
-        let button = document.createElement('button')
-        button.className = "list_buttons";
-        button.innerHTML = `${item['name']} · ${item['number_seen']}`;
-        pokemon_button_list.appendChild(button);
-        button.addEventListener('click', function(){
-            localStorage.setItem('selectedIndex', item_index);
-            window.location.replace('pokemon.html');
-        })
+    let pokemon_button_list = document.querySelector("#hunting_list");
+
+    if(localStorage.getItem("hunting_pokemon") !== null){
+        var hunting_pokemon = JSON.parse(localStorage.getItem("hunting_pokemon"))
+        for(let item_index = 0; (item_index < hunting_pokemon.length); item_index++){
+            let item = hunting_pokemon[item_index];
+            let button = document.createElement('button')
+            button.className = "list_buttons";
+            button.innerHTML = `${item['name']} · ${item['number_seen']}`;
+            pokemon_button_list.appendChild(button);
+            button.addEventListener('click', function(){
+                localStorage.setItem('selectedIndex', item_index);
+                window.location.replace('pokemon.html');
+            })
+        }
     }
+
+
 
     function closeForm() {
         document.getElementById("myForm").style.display = "none";
