@@ -3,8 +3,8 @@
 function main(){  
     
     /* On Load for Local Storage */
-    if(localStorage.getItem("pokemon") === null){
-        localStorage.setItem('pokemon', JSON.stringify(
+    if(localStorage.getItem("pokemon") === null){            //Find out how to read from txt file/make
+        localStorage.setItem('pokemon', JSON.stringify(     //Separate js file to import the data from
             [
                 {
                     "name" : "Bulbasaur",
