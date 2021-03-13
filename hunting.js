@@ -1,44 +1,8 @@
 /* Javascript for the hunting list page */
 
+import {pokemon_list as pokemon_list} from "./all_pokemon.js"
+
 function main(){  
-    
-    /* On Load for Local Storage */
-    if(localStorage.getItem("pokemon") === null){            //Find out how to read from txt file/make
-        localStorage.setItem('pokemon', JSON.stringify(     //Separate js file to import the data from
-            [
-                {
-                    "name" : "Bulbasaur",
-                    "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/bulbasaur.png",
-                    "href" : "http://pokemondb.net/pokedex/bulbasaur",
-                    "number_seen" : 0,
-                    "date" : ""
-                },
-                {
-                    "name" : "Charmander",
-                    "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/charmander.png",
-                    "href" : "http://pokemondb.net/pokedex/charmander",
-                    "number_seen": 0,
-                    "date" : ""
-                },
-                {
-                    "name" : "Squirtle",
-                    "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/squirtle.png",
-                    "href" : "http://pokemondb.net/pokedex/squirtle",
-                    "number_seen": 0,
-                    "date" : ""
-                },
-                {
-                    "name" : "Pikachu",
-                    "sprite_image" : "https://img.pokemondb.net/sprites/firered-leafgreen/shiny/pikachu.png",
-                    "href" : "http://pokemondb.net/pokedex/pikachu",
-                    "number_seen": 0,
-                    "date" : ""
-                }
-            ]))
-    }
-
-
-    let pokemon_list = JSON.parse(localStorage.getItem("pokemon"));
 
     let copied_pokemon_list = JSON.parse(JSON.stringify(pokemon_list));
     
@@ -48,7 +12,6 @@ function main(){
     }else{
         var hunting_list = []
     };
-
 
 
     /* Add Pokemon button */
@@ -62,6 +25,16 @@ function main(){
     }
 
     add_pokemon_button.addEventListener("click", onAddButtonClick)
+
+
+    /* Auto add pokemon to dropdown options */
+
+    for(let i in pokemon_list){
+        let new_mon_option = document.createElement("option");
+        new_mon_option.value = pokemon_list[i].name;
+        new_mon_option.innerHTML = pokemon_list[i].name;
+        document.querySelector("#pokemon_dropdown").appendChild(new_mon_option);
+    }
 
 
     /*Function to add pokemon to hunting list*/
